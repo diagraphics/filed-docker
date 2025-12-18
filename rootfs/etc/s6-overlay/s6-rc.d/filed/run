@@ -1,0 +1,5 @@
+#!/command/execlineb -P
+# shellcheck disable=all
+
+export FILED_STATE_FILE "/var/filed/filed.db"
+filed /var/filed

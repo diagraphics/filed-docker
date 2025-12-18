@@ -1,0 +1,17 @@
+diff --git a/store/jobs.go b/store/jobs.go
+index de2b9da..8309be3 100644
+--- a/store/jobs.go
++++ b/store/jobs.go
+@@ -123,10 +123,10 @@ func (s *Store) CreateJob(id string, command string) (*Job, error) {
+ }
+
+ func (s *Store) GetJob(id string) (*Job, error) {
+-	query := `SELECT id, state, inode, command, output, attempts, created_at FROM jobs WHERE id = ?`
++	query := `SELECT id, state, inode, command, output, attempts, created_at, updated_at FROM jobs WHERE id = ?`
+ 	j := &Job{}
+ 	err := s.db.QueryRow(query, id).Scan(
+-		&j.ID, &j.State, &j.INode, &j.Command, &j.Output, &j.Attempts, &j.CreatedAt,
++		&j.ID, &j.State, &j.INode, &j.Command, &j.Output, &j.Attempts, &j.CreatedAt, &j.UpdatedAt,
+ 	)
+ 	if err == sql.ErrNoRows {
+ 		return nil, os.ErrNotExist

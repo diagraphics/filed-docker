@@ -1,0 +1,10 @@
+services:
+  filed:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: filed
+    privileged: true
+    ports:
+      - "8080:5000"
+    restart: unless-stopped

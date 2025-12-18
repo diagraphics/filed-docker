@@ -1,0 +1,4 @@
+#!/command/execlineb -P
+# shellcheck disable=all
+
+dufs -A /var/filed
