@@ -2,7 +2,6 @@ services:
   filed:
     build:
       context: .
-      dockerfile: Dockerfile
     container_name: filed
     privileged: true
     ports:
